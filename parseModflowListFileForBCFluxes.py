@@ -54,7 +54,7 @@ class GagedReaches:
                     self.gaged_reach_bc_reach_types[(gaged_reach_id)] = [bc_type]
                 else:
                     # first occurrence of this bc_type for this gaged_reach_id
-                    self.gaged_reach_bc_reach_types[(gaged_reach_id, 'bc_type_list')].append(bc_type)
+                    self.gaged_reach_bc_reach_types[(gaged_reach_id)].append(bc_type)
                 self.gaged_reach_bc_reach_list[(gaged_reach_id, bc_type)] = [bc_reach_id]
 
         f.close()
@@ -146,7 +146,7 @@ class ModflowListing:
         
     def openFiles(self):
         #inFileName = raw_input("Please enter name of MODFLOW input file for parsing: ")
-        inFileName = 'NFSEG_SS_Y2001V1_141020updspr_2.lst'
+        inFileName = 'NFSEG_SS_Y2001V2_141208.lst'
         self.inFile = open(inFileName, 'r')
         outFileName = inFileName + '.out.csv'
         self.outFile = open(outFileName, 'w')
